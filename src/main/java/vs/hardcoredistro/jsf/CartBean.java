@@ -27,7 +27,8 @@ public class CartBean implements Serializable {
         OrderedAlbum oa = new OrderedAlbum(1, album);
         boolean found = false;
         for (OrderedAlbum album1 : getOrderedAlbums()) {
-            if (album1.getAlbum().equals(album)) {
+            if (album1.getAlbum().getBand().equals(album.getBand())
+                    && album1.getAlbum().getTitle().equals(album.getTitle())) {
                 found = true;
                 album1.setQuantity(album1.getQuantity()+1);
                 break;
